@@ -1,0 +1,77 @@
+Web sitesindeki tüm sayfalarda <head></head> içinde 1 kez tetiklenecek FACEBOOK PIXEL KODU. (Eskisi silinecek)
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1081161369307382');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1081161369307382&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+ÜRÜN SAYFALARINA eklenecek ürün görüntüleme (viewcontent) kodu:
+<script>
+ fbq('track', 'ViewContent', {
+ value: 69.99,
+ currency: 'TRY',
+ content_ids: '567567575',
+ content_type: 'product',
+ });
+</script>
+
+
+SİPARİŞ TAMAM sayfasına eklenecek SATIŞ (purchase) kodu:
+Müşteri 1 ürün aldıysa;
+<script>
+ fbq('track', 'Purchase', {
+ value: 129.90,
+ currency: 'TRY',
+ content_ids: '23454',
+ content_type: 'product',
+ });
+</script>
+
+
+Eğer müşteri 1 adetten fazla ürün aldıysa aşağıdaki şekilde köşeli parantez içinde tek tırnak ve virgüller ile ayrılarak ÜRÜN ID'leri tek tek yazdırılmalı.
+<script>
+  fbq('track', 'Purchase', {
+    value: 82.90,
+    currency: 'TRY',			
+    content_ids: ['TK1234','KT1234']
+    content_type: 'product'
+  });
+</script>
+
+
+1 ÜRÜN SEPETE EKLENDİĞİNDE tetiklenecek sepete ekleme (AddToCart) kodu:
+<script>
+ fbq('track', 'AddToCart', {
+ value: 119.90,
+ currency: 'TRY',
+ content_ids: '2435353534, 353534534, 987878958',
+ content_type: 'product',
+ });
+</script>
+
+
+ÜYELİK TAMAM sayfasına eklenerek yalnızca üye olunduğunda tetiklenecek üyelik (completeregistration) kodu:
+<script>
+ fbq('track', 'CompleteRegistration');
+</script>
+
+
+ÖDEME ADIMINDA müşterinin YALNIZCA ödeme formunu doldurduğunda tetiklenecek Ödeme bilgisi ekleme (AddPaymentInfo) kodu:
+<script>
+ fbq('track', 'AddPaymentInfo');
+</script>
+
+
